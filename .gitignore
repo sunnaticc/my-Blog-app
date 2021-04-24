@@ -1,2 +1,4 @@
-requirements.txt
+blog/
 
+__pycache__/
+*.squlite3

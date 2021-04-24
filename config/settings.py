@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,9 +24,9 @@ SECRET_KEY = 'django-insecure-u)u8wjvi4=zjsm5(+&nd8@m081vhe2#ep#x&c7q&$rfj=nu(fa
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
+# DEBUG = True
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
-
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -135,3 +135,5 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
 # AUTH_USER_MODEL = 'accounts.CustomUser' 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# activate Django-Heroku
+django_heroku.settings(locals())
