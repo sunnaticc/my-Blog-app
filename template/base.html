@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title> Sunnaticc Blog </title>
+        <link href = "https://fonts.googlepis.com/css?family=Source+Sans+Pro:400" rel ="stylesheet">
+        <link rel ="stylesheet"s href="{% static 'css/base.css' %}">
+    </head>
+    <body>
+        <div>
+            
+                
+
+            {% if user.is_authenticated %}
+            <header>
+                <div class="nav-left">
+
+                    <h1><a href ="{% url 'home' %}">Sunnaticc Blog</a></h1>
+                </div>
+                <div class="nav-right">
+                 <a href="{% url 'post_new' %}"> New Blog Post</a>
+                </div>
+            </header>
+
+            <p>Hi {{ user.username }}!</p>
+            <p><a href="{% url 'logout' %}">Log out</a></p>
+
+            {% else %}
+            <div class="nav-left">
+
+                <h1>Sunnaticc Blog</h1>
+            </div>
+      
+                <p>You are not logged in.</p>
+                <a href="{% url 'login' %}">Log In</a> |
+                <a href="{% url 'signup' %}">Sign Up</a>
+            {% endif %}
+        
+        {% block content %}
+        {% endblock %}
+        </div>
+    </body>
+</html>
