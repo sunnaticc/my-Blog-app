@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import django_heroku
+# import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -124,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles')) 
+STATIC_ROOT = STATIC_ROOT= str(BASE_DIR.joinpath('staticfiles')) 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
 # Default primary key field type
@@ -136,4 +136,4 @@ LOGOUT_REDIRECT_URL = 'login'
 # AUTH_USER_MODEL = 'accounts.CustomUser' 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # activate Django-Heroku
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
