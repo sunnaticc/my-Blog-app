@@ -17,7 +17,7 @@ class post(models.Model):
         return reverse('post_detail', args=[str(self.id)])
 
 class comment(models.Model): # new
-    post = models.ForeignKey(post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(post, on_delete=models.CASCADE, related_name='comments',)
     Comment = models.CharField(max_length=140)
     author = models.ForeignKey(
         get_user_model(),

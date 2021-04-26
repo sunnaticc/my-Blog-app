@@ -9,5 +9,18 @@
     </div>
     <a href ='{% url "post_edit" post.pk %}'>Edit</a>
     <a href ='{% url "post_delete" post.pk %}'> Delete</a>
+    <!-- <a href ='{% url "comment" post.pk %}'> comments</a>
+    #new
+    {% if not post.comments.all %}
+        no  comments yet ...<a href='#'>
+    {% for comment in post.comments.all %}
+            <strong>
+                {{ comment.comment }}
+            </strong>
+                <br/>
+                {{ comment.author}}
+            {% endfor%}
+    {% endif %} -->
+    
     <p>Back to <a href="{% url 'home' %}">All Posts</a>.</p>
 {% endblock %}

@@ -10,12 +10,23 @@
                 {{ post.date }}</span>
         </div>
         <div class="card-body">
-            {{ post.body }}
-        </div>
-        <div class="card-footer text-center text-muted">
+           <p> {{ post.body }}</p>
+        
+        <!-- <div class="card-footer text-center text-muted"> -->
             <a href="{% url 'post_edit' post.pk %}">Edit</a> |
-             <a href="{% url 'post_delete' post.pk %}">Delete</a>
+             <a href="{% url 'post_delete' post.pk %}">Delete</a> | 
+             
         </div>
+    </div class="card-footer">
+        {% for comment in post.comments.all %}
+            <p>
+                <span class="font-weight-bold">
+                    {{ comment.author }} &middot;
+                        </span>
+                        {{ comment }}
+                    </p>
+                {% endfor %}
+            </div>
         </div>
         <br />
     {% endfor %}
